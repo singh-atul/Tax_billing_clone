@@ -31,3 +31,17 @@ exports.getUser = async (req, res) =>  {
         })
     }
 }
+
+exports.updateUser = async (req, res) =>  {
+    const user = await User.findOne({ username: req.body.username });
+    user.name=req.body.name,
+    user.salary= req.body.salary,
+    user.role=req.body.role
+    try{
+        await user.save();
+        res.status(200).send(user);
+    }
+    catch(err){
+        res.status(500).send({message:"Internal Server error"});
+    }
+}

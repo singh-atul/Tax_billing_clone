@@ -7,6 +7,12 @@ module.exports = function (app) {
     app.post("/tbc/api/v1/addUser/", [verifyUserReqBody.validateUserRequestBody], userController.addUser);
     //Get detail of all users
     app.get("/tbc/api/v1/addUser/", userController.getUser);
+    //Update detail of all users
+    app.put("/tbc/api/v1/updateUser/", userController.updateUser);
+
+
+
+    
 
     
 
