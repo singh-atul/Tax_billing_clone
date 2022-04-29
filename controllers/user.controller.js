@@ -22,7 +22,6 @@ exports.addUser = async (req, res) =>  {
 }
 
 exports.getUser = async (req, res) =>  {
-    console.log("45454");
     const user = await User.find();
     if (user) {
         res.status(200).send(objectConvertor.userResponse(user));
@@ -31,6 +30,4 @@ exports.getUser = async (req, res) =>  {
             message: `User is not present`
         })
     }
-
-
 }
