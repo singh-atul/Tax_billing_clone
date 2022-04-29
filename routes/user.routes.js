@@ -9,6 +9,9 @@ module.exports = function (app) {
     app.get("/tbc/api/v1/addUser/", userController.getUser);
     //Update detail of all users
     app.put("/tbc/api/v1/updateUser/", userController.updateUser);
+    //Delete user
+    app.delete('/tbc/api/v1/removeuser/:userName', userController.removeUser)
+
 
 
 

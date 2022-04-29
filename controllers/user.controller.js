@@ -45,3 +45,21 @@ exports.updateUser = async (req, res) =>  {
         res.status(500).send({message:"Internal Server error"});
     }
 }
+
+
+exports.removeUser = async (req, res) =>  {
+    try{
+        try{
+            const user = await User.findOne({ username: req.params.userName });
+            await user.remove();
+            res.status(200).send({message:"User deleted successfully"});
+        }
+        catch(err){
+            res.status(500).send({message:"Internal Server error"});
+        }
+    }
+    catch(err){
+        res.status(500).send({message:"Some internal server error"});
+    }
+
+}
