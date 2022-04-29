@@ -2,7 +2,6 @@ const User = require("../models/user.model");
 
 // Get user information
 exports.addUser = async (req, res) =>  {
-    console.log("#####")
     const userObj = {
         name: req.body.name,
         email: req.body.email,
@@ -10,7 +9,6 @@ exports.addUser = async (req, res) =>  {
         salary: req.body.salary,
         role:req.body.role
     }
-    console.log(userObj);
     try {
         const userCreated = await User.create(userObj);
         res.status(201).send("User created Successfully");
