@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
       required: true
     },
     salary: {
-      type: Int,
+      type: Number,
       required: true
     },
     role: {
